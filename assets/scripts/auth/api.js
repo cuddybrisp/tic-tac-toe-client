@@ -37,7 +37,7 @@ const signOut = function () {
     }
   })
 }
-const onClick = function (index, player) {
+const pickSquare = function (index, player) {
   return $.ajax({
     url: config.apiUrl + '/games/' + store.game._id,
     method: 'PATCH',
@@ -49,8 +49,7 @@ const onClick = function (index, player) {
         cell: {
           index: index,
           value: player
-        },
-        over: false
+        }
       }
     }
   })
@@ -59,10 +58,10 @@ const createGame = function (formData) {
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'POST',
-    data: formData,
     headers: {
       Authorization: 'Bearer ' + store.user.token
-    }
+    },
+    data: '{}'
   })
 }
 module.exports = {
