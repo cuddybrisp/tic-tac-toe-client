@@ -37,38 +37,10 @@ const signOut = function () {
     }
   })
 }
-const pickSquare = function (index, player) {
-  return $.ajax({
-    url: config.apiUrl + '/games/' + store.game._id,
-    method: 'PATCH',
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-    },
-    data: {
-      game: {
-        cell: {
-          index: index,
-          value: player
-        }
-      }
-    }
-  })
-}
-const createGame = function (formData) {
-  return $.ajax({
-    url: config.apiUrl + '/games',
-    method: 'POST',
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-    },
-    data: '{}'
-  })
-}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut,
-  onClick,
-  createGame
+  signOut
 }
