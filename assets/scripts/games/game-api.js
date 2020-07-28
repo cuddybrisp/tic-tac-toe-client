@@ -3,9 +3,9 @@ const config = require('../config')
 const store = require('../store')
 
 
-const onClick = function (index, player) {
+const onPlayerMove = function (index, player) {
   return $.ajax({
-    url: config.apiUrl + '/games/' + store.user._id,
+    url: config.apiUrl + '/games/' + store.game._id,
     method: 'PATCH',
     headers: {
       Authorization: 'Bearer ' + store.user.token
@@ -31,6 +31,6 @@ const createGame = function (formData) {
   })
 }
 module.exports = {
-  onClick,
+  onPlayerMove,
   createGame
 }

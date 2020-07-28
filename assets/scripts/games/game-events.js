@@ -5,26 +5,25 @@ const store = require('../store')
 
 const getFormFields = require('../../../lib/get-form-fields')
 
-
 store.player = 'X'
 
 const onSelect = function (event) {
   event.preventDefault()
-  store.currentBox = event.target
-  const cellIndex = $(store.currentBox).data('index')
-  if ($(store.currentBox).text() === '') {
-    $(store.currentBox).text(store.player)
+  store.selectedCell = event.target
+  const cellIndex = $(store.selectedCell).data('index')
+  if ($(store.selectedCell).text() === '') {
+    $(store.selectedCell).text(store.player)
     if (store.player !== 'O') {
       store.player = 'O'
     } else if (store.player === 'O') {
-      $(store.currentBox).text(store.player)
+      $(store.selectedCell).text(store.player)
       store.player = 'X'
     }
   } else {
     $('#message').text('Try another spot')
   }
   const cellValue = store.player
-  api.onClick(cellIndex, cellValue)
+  api.onPlayerMove(cellIndex, cellValue)
     .then(ui.clickSuccess)
     .catch(ui.clickFailure)
 }
