@@ -5,28 +5,16 @@ const store = require('../store')
 
 const getFormFields = require('../../../lib/get-form-fields')
 
-store.player = 'X'
-
-const onSelect = function (event) {
+const boxSelected = function (event) {
   event.preventDefault()
   store.selectedCell = event.target
   const cellIndex = $(store.selectedCell).data('index')
-  if ($(store.selectedCell).text() === '') {
-    $(store.selectedCell).text(store.player)
-    if (store.player !== 'O') {
-      store.player = 'O'
-    } else if (store.player === 'O') {
-      $(store.selectedCell).text(store.player)
-      store.player = 'X'
-    }
-  } else {
-    $('#message').text('Try another spot')
-  }
   const cellValue = store.player
   api.onPlayerMove(cellIndex, cellValue)
-    .then(ui.clickSuccess)
-    .catch(ui.clickFailure)
+    .then(ui.playerMoveSuccess)
+    .catch(ui.playerMoveFailure)
 }
+
 const newGame = function () {
   console.log(event)
   api.createGame()
@@ -34,7 +22,7 @@ const newGame = function () {
     .catch(ui.createGameFailed)
 }
 module.exports = {
-  onSelect,
+  boxSelected,
   newGame
 
 }
