@@ -7,8 +7,8 @@ const getFormFields = require('../../../lib/get-form-fields')
 
 const boxSelected = function (event) {
   event.preventDefault()
-  store.selectedCell = event.target
-  const cellIndex = $(store.selectedCell).data('index')
+  store.game.cells = event.target
+  const cellIndex = $(store.game.cells).data('index')
   const cellValue = store.player
   api.onPlayerMove(cellIndex, cellValue)
     .then(ui.playerMoveSuccess)

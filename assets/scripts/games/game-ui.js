@@ -3,11 +3,10 @@ const store = require('../store')
 
 const createGameSuccess = function (response) {
   $('#message').text('New Game Made!')
-  console.log(store)
+
   store.game = response.game
   store.player = 'x'
   console.log('store: ', store)
-  console.log('token: ', store.user.token)
 }
 const playerMoveSuccess = function (response) {
 //   $('#message').text('Signed In')
@@ -15,15 +14,16 @@ const playerMoveSuccess = function (response) {
 //   store.user = response.game._id
 //   console.log('store: ', store)
 //   console.log('token: ', store.user.token)
-  if ($(store.selectedCell).text() === '') {
-    $(store.selectedCell).text(store.player)
+  if ($(store.game.cells).text() === '') {
+    $(store.game.cells).text(store.player)
     if (store.player !== 'O') {
       store.player = 'O'
     } else if (store.player === 'O') {
-      $(store.selectedCell).text(store.player)
+      $(store.game.cells).text(store.player)
       store.player = 'x'
     }
   }
+  console.log(store)
 }
 
 const playerMoveFailure = function (response) {
