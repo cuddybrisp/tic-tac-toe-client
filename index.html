@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic Tac Toe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <h1>TIC TAC TOE</h1>
+
+      <p id="message"></p>
+      <div class="" id="auth">
+      <form id="sign-up">
+        <input name="credentials[email]" placeholder="email here" type="email">
+        <input name="credentials[password]" placeholder="password here" type="password">
+        <input name="credentials[password_confirmation]" placeholder="confirm password here" type="password">
+        <button type="submit">Sign up</button>
+      </form>
+
+      <form id="sign-in">
+        <input name="credentials[email]" placeholder="email here" type="email">
+        <input name="credentials[password]" placeholder="password here" type="password">
+        <button type="submit">Sign In</button>
+      </form>
+
+      <form id = "change-password">
+        <input name="passwords[old]" placeholder="old password" type="text">
+        <input name="passwords[new]" placeholder="new password" type="text">
+        <button type="submit">Change Password</button>
+      </form>
+      <form id="sign-out">
+         <button>Log Out</button>
+       </form>
+     </div>
+     <section class="container">
+     <div class="row h-100 board" id="gameboard">
+       <div data-cell-index="0" name="game[cells]" class="box col-4" id="0"></div>
+       <div data-cell-index="1" name="game[cells]" class="box col-4" id="1"></div>
+       <div data-cell-index="2" name="game[cells]" class="box col-4" id="2"></div>
+       <div data-cell-index="3" name="game[cells]" class="box col-4" id="3"></div>
+       <div data-cell-index="4" name="game[cells]" class="box col-4" id="4"></div>
+       <div data-cell-index="5" name="game[cells]" class="box col-4" id="5"></div>
+       <div data-cell-index="6" name="game[cells]" class="box col-4" id="6"></div>
+       <div data-cell-index="7" name="game[cells]" class="box col-4" id="7"></div>
+       <div data-cell-index="8" name="game[cells]" class="box col-4" id="8"></div>
+     </div>
+   </section>
+     <div id="game-action" class="game-action">
+       <div><button type="submit" id="new-game">NEW GAME</button></div>
+       <div><button type="submit">Reset Game</button></div>
+       <div><button type="submit">Show My Games</button></div>
+
+
+     </div>
+    </body>
+</html>
