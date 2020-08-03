@@ -10,10 +10,7 @@ const boxSelected = function (event) {
   if ($(event.target).text() === '') {
     store.selectedCell = event.target
     const cellIndex = event.target.id
-    console.log('this is cellIndex in box boxSelected', cellIndex)
     const cellValue = store.player
-    console.log(cellIndex, cellValue)
-    console.log('this is store.game before player move api', store.game)
     api.onPlayerMove(cellIndex, cellValue)
       .then(ui.playerMoveSuccess)
       .catch(ui.playerMoveFailure)
@@ -21,7 +18,6 @@ const boxSelected = function (event) {
 }
 
 const newGame = function () {
-  console.log(event)
   api.createGame()
     .then(ui.createGameSuccess)
     .catch(ui.createGameFailed)

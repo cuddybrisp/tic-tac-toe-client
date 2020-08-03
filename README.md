@@ -26,7 +26,8 @@ HTML/CSS
 Bootstrap
 Javascript
 ### Unsolved Problems
-Still need to ....
-Would like to eventually ....
+Still need to get the game board hidden right, and a few other bugs that i didnt quite get around to finishing up
+Would like to eventually add A LOT more styling to the game board and its click events.
 ### Images
 Wireframe:
+[Imgur](https://imgur.com/WDkX5A8)

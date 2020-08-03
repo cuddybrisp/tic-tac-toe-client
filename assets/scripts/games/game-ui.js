@@ -7,8 +7,6 @@ const createGameSuccess = function (response) {
   store.player = 'x'
   $('#message').text(`New Game Made, ${store.player} goes first.`)
   $('.board').show()
-  console.log('its ', store.player, ' turn')
-  console.log('store: ', store)
 }
 
 const playerMoveSuccess = function (response) {
