@@ -3,11 +3,11 @@
 
 
 ## Important Links
-[Github Repository]('https://github.com/cuddybrisp/tic-tac-toe-client')
-[Tic Tac Toe Site]('https://cuddybrisp.github.io/tic-tac-toe-client/')
+[Github Repository](https://github.com/cuddybrisp/tic-tac-toe-client)
+[Tic Tac Toe Site](https://cuddybrisp.github.io/tic-tac-toe-client/)
 
 ### Planning Story
-Approaching this project, I need to use my new learned knowledge of Javascript, HTML, CSS and jQuery to make a Single Page Application variant of Tic Tac Toe. The game is simple in theory, but will prove to be a challenge from a development standpoint. I need to start with what my game's actions will be and what the response of the API is going to be. After I have an idea of what I want the project to look like, I can start getting a visual representation by making some wireframes.
+Approaching this project, I need to use my new learned knowledge of Javascript, HTML, CSS and jQuery to make a Single Page Application variant of Tic Tac Toe. The game is simple in theory, but will prove to be a challenge from a development standpoint. I need to start with what my game's actions will be and what the response of the API is going to be. After I have an idea of what I want the project to look like, I can start getting a visual representation by making some wireframes. Using those wireframes and the skills I've learned from these few weeks, I should be able to come up with an MVP, or a Most Viable Product, and if I have time left, make some adjustments for styling.
 
 ### User Stories
 As a user I want to sign up and sign in.
@@ -28,5 +28,5 @@ Javascript
 ### Unsolved Problems
 Still need to ....
 Would like to eventually ....
-###Images
+### Images
 Wireframe:

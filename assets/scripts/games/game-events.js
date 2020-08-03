@@ -7,12 +7,17 @@ const getFormFields = require('../../../lib/get-form-fields')
 
 const boxSelected = function (event) {
   event.preventDefault()
-  store.game.cells = event.target
-  const cellIndex = $(store.game.cells).data('index')
-  const cellValue = store.player
-  api.onPlayerMove(cellIndex, cellValue)
-    .then(ui.playerMoveSuccess)
-    .catch(ui.playerMoveFailure)
+  if ($(event.target).text() === '') {
+    store.selectedCell = event.target
+    const cellIndex = event.target.id
+    console.log('this is cellIndex in box boxSelected', cellIndex)
+    const cellValue = store.player
+    console.log(cellIndex, cellValue)
+    console.log('this is store.game before player move api', store.game)
+    api.onPlayerMove(cellIndex, cellValue)
+      .then(ui.playerMoveSuccess)
+      .catch(ui.playerMoveFailure)
+  }
 }
 
 const newGame = function () {

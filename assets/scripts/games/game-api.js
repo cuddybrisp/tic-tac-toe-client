@@ -2,16 +2,7 @@
 const config = require('../config')
 const store = require('../store')
 
-const onPlayerMove = function (gameData, index, value) {
-  let data = {
-    game: {
-      cell: {
-        index: index,
-        value: value
-      },
-      over: false
-    }
-  }
+const onPlayerMove = function (index, value) {
   return $.ajax({
     url: config.apiUrl + '/games/' + store.game._id,
     method: 'PATCH',
@@ -28,19 +19,26 @@ const onPlayerMove = function (gameData, index, value) {
     }
   })
 }
+
+const gameOver = function () {
+  return $.ajax({
+    url: config.apiUrl + '/games/' + store.game._id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: {
+      game: {
+        cell: {
+          index: store.selectedCell.id,
+          value: store.player
+        },
+        over: false
+      }
+    }
+  })
+}
 const createGame = function () {
-  // console.log('data: ', data)
-  // let data = {
-  //   game: {
-  //     cells: ['', '', '', '', '', '', '', '', ''],
-  //     over: false,
-  //     player_x: {
-  //       id: store.user.id,
-  //       email: store.user.email
-  //     },
-  //     player_o: null
-  //   }
-  // }
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'POST',
@@ -51,5 +49,6 @@ const createGame = function () {
 }
 module.exports = {
   onPlayerMove,
-  createGame
+  createGame,
+  gameOver
 }
